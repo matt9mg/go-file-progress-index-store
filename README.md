@@ -20,7 +20,7 @@ data := []string{"1", "2", "3"}
 
 unprocessed := fpis.ReturnUnprocessed(data)
 
-if len(data) > 0 {
+if len(unprocessed) > 0 {
 	// perform some business logic
 	if err := fpis.Save(unprocessed); err != nil {
 		log.Fatalln(err)
