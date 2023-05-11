@@ -54,13 +54,15 @@ func (f *FileProgressStore[T]) Save(items ...T) error {
 	if err = f.file.Truncate(0); err != nil {
 		return err
 	}
-	_, err = f.file.Seek(0, 0)
-
-	if err != nil {
+	if _, err = f.file.Seek(0, 0); err != nil {
 		return err
 	}
 
 	_, err = f.file.Write(data)
 
 	return err
+}
+
+func (f *FileProgressStore[T]) ReturnUnprocessed(toProcess []T) []T {
+	return slice_diff.SliceDiff[T](f.results, toProcess)
 }
