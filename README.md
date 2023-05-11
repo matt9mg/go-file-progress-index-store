@@ -1,3 +1,5 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/matt9mg/go-file-progress-index-store.svg)](https://pkg.go.dev/github.com/matt9mg/go-file-progress-index-store)
+
 # File Progress Index Store
 Stores current progress of a process index
 
