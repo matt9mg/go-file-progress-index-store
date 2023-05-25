@@ -22,7 +22,7 @@ unprocessed := fpis.ReturnUnprocessed(data)
 
 if len(unprocessed) > 0 {
 	// perform some business logic
-	if err := fpis.Save(unprocessed); err != nil {
+	if err := fpis.Save(unprocessed...); err != nil {
 		log.Fatalln(err)
     }
 }
